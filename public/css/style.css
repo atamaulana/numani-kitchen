@@ -1,0 +1,526 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+h1,
+table {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 260px;
+    right: 0;
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    z-index: 1050;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: #fff; /* Menyediakan latar belakang agar tetap terlihat */
+    z-index: 10; /* Memastikan header berada di atas konten lainnya */
+    padding: 10px 0; /* Memberikan sedikit ruang di sekitar teks */
+}
+
+.main {
+    margin-top: 20px; /* Tambahkan jarak antara header dan main jika diperlukan */
+}
+
+.btn-prima {
+    background-color: #d0aa11;
+    border: 1px solid;
+    border-color: #d0aa11;
+    color: white;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.btn-prima:hover {
+    background-color: white;
+    color: #d0aa11;
+    border: 1px solid;
+    border-color: #d0aa11;
+    border-radius: 20px;
+}
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    padding: 24px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.sidebar .header,
+.sidebar .main {
+    display: flex;
+    flex-direction: column; /* Atur elemen-elemen di dalam header dan main secara vertikal */
+}
+
+.sidebar .description-header {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 16px;
+    text-align: center;
+    color: #343a40;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar i {
+    text-decoration: none;
+}
+
+.sidebar .header .list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.sidebar .header .list-item .icon {
+    margin-right: 12px;
+}
+
+.sidebar .header .illustration {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    margin: 10px 0 22px 0;
+    box-sizing: border-box;
+}
+
+.sidebar .main .list-item .description {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.sidebar .main .list-item .icon {
+    margin-right: 12px;
+}
+
+.sidebar .main .list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+    width: 212px;
+    box-sizing: border-box;
+    color: #343a40; /* Warna default untuk teks dan ikon */
+}
+
+.sidebar .main .list-item .icon {
+    margin-right: 12px;
+    color: #343a40 !important; /* Warna default untuk ikon */
+    transition: color 0.3s ease; /* Tambahkan transisi untuk efek smooth */
+}
+
+.sidebar .main .list-item .description {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #343a40; /* Warna default untuk teks */
+    transition: color 0.3s ease; /* Tambahkan transisi untuk efek smooth */
+}
+
+.sidebar .main .list-item:hover {
+    background: #d0aa11;
+    color: white !important; /* Ubah warna teks saat hover */
+}
+
+/* Aktifkan halaman saat ini */
+.sidebar .main .list-item.active {
+    background: #d0aa11; /* Warna background aktif */
+    color: white !important; /* Warna teks aktif */
+    border: 2px solid #d0aa11; /* Tambahkan border */
+}
+
+.sidebar .main .list-item.active .icon {
+    color: white; /* Warna ikon aktif */
+}
+
+.sidebar .main .list-item:hover .description,
+.sidebar .main .list-item.active .description {
+    color: #ffffff !important; /* Paksa warna font menjadi putih */
+}
+
+#content {
+    position: relative;
+    width: calc(100% - 280px);
+    left: 280px;
+    transition: 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    text-align: left;
+    font-weight: 600;
+    padding-right: 20px;
+}
+
+.form-group input {
+    margin-left: 10px;
+}
+
+.form-group .form-control {
+    width: 100%; /* Memastikan input mengikuti lebar form */
+}
+
+input[type="date"],
+input[type="text"] {
+    max-width: 300px; /* Membatasi lebar maksimal input */
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-header .btn-close {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.btn-custom {
+    color: #28a745; /* Hijau */
+    background-color: white;
+    border: 2px solid #28a745;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-custom:hover {
+    color: white;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* Container Tabel */
+.table-container {
+    margin: 0 auto; /* Pusatkan tabel secara horizontal */
+    padding: 0; /* Tambahkan jarak horizontal */
+    max-width: 100%; /* Maksimalkan lebar sesuai konten */
+    overflow-x: auto; /* Tambahkan scroll horizontal jika tabel terlalu besar */
+}
+
+/* Tabel */
+.table {
+    width: 100%; /* Pastikan tabel memenuhi lebar container */
+    table-layout: auto; /* Biarkan kolom menyesuaikan lebar konten */
+    font-size: 11px; /* Atur ukuran font sesuai kebutuhan */
+    background-color: white; /* Tambahkan warna latar belakang default */
+}
+
+/* Header Tabel */
+.table thead {
+    background-color: #e4e0cfe1; /* Warna header */
+    color: black; /* Atur warna font header */
+}
+
+.table th {
+    padding: 10px; /* Menambahkan padding agar sel lebih lebar */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    min-width: 100px; /* Atur lebar minimum untuk kolom */
+}
+
+/* Isi Tabel */
+.table td {
+    min-width: 100px; /* Atur lebar minimum untuk kolom */
+    padding: 10px; /* Memberikan ruang pada sel tabel */
+    text-align: center; /* Teks rata tengah */
+    border: 1px solid black; /* Tambahkan border pada sel */
+}
+
+/* Tombol dalam Tabel */
+.table .btn-sm {
+    font-size: 10px; /* Mengatur ukuran font tombol */
+    padding: 5px 10px; /* Tambahkan padding pada tombol */
+    border-radius: 5px; /* Buat tombol lebih melingkar */
+    transition: background-color 0.3s ease; /* Tambahkan animasi hover */
+}
+
+th {
+    border: 1px solid black; /* Atur ketebalan border 3px dan warnanya hitam */
+}
+td {
+    border: 1px solid black; /* Atur ketebalan border 3px dan warnanya hitam */
+}
+
+.card {
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.card-title {
+    font-size: 0.9rem;
+}
+
+.card-text {
+    font-size: 1.2rem;
+}
+
+/* Mengatur ukuran container untuk Pie Chart */
+.container-pie {
+    max-width: 400px; /* Maksimal lebar kontainer */
+    width: 100%; /* Lebar menyesuaikan 100% dari elemen induk */
+    margin: 0; /* Pusatkan secara horizontal */
+    margin-left: 20px;
+    align-items: flex-end; /* Pastikan elemen-elemen berada di kiri secara horizontal */
+    justify-content: left;
+}
+
+/* Mengatur ukuran canvas di dalam container */
+.container-bar canvas {
+    width: 100% !important; /* Membuat canvas responsif */
+    height: auto !important; /* Sesuaikan tinggi secara otomatis */
+}
+
+.barChart {
+    width: 50px;
+    height: 50px;
+}
+
+/* Mengatur container untuk tabel dan judul */
+.content-table {
+    /* Atur elemen-elemen di dalam container secara vertikal */
+    width: 100%; /* Batasi lebar maksimal */
+    max-width: 800px; /* Batasi lebar jika perlu */
+    padding: 0 20px; /* Tambahkan jarak di kiri dan kanan */
+    margin-top: 0;
+}
+
+.table-container {
+    background-color: #e4e0cfe1;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+/* Gaya untuk judul tabel */
+.table-container h1 {
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+/* Gaya untuk tabel */
+.table-dashboard {
+    width: 100%;
+}
+
+/* Gaya untuk header tabel */
+.table-dark {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+}
+
+.table-dashboard th,
+.table-dashboard td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Gaya untuk baris yang ada di dalam tabel */
+.table-dashboard tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.table-dashboard tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Gaya untuk badge status */
+.badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+
+/* Badge warna hijau untuk "paid" */
+.bg-success {
+    background-color: #184d47 !important;
+    color: white;
+}
+
+/* Badge warna merah untuk "unpaid" */
+.bg-danger {
+    background-color: #990000 !important;
+    color: white;
+}
+
+.larger-badge {
+    font-size: 0.7rem; /* Atur sesuai keinginan */
+    padding: 0.5rem 1rem; /* Opsional: untuk memberi lebih banyak ruang */
+}
+
+/* Gaya umum untuk modal struk */
+.receipt {
+    font-family: "Courier New", Courier, monospace; /* Font yang biasa digunakan di struk */
+    text-align: left;
+    padding: 10px;
+    width: 250px; /* Lebar struk */
+    margin: 0 auto;
+}
+
+.receipt-header h4 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.receipt-header p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.receipt-body p {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.receipt-items ul {
+    padding: 0;
+    list-style: none;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.receipt-footer p {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.receipt-footer hr {
+    margin: 10px 0;
+}
+
+.modal-dialog.modal-sm {
+    max-width: 300px; /* Ukuran modal */
+}
+
+.highlight {
+    background-color: yellow; /* Warna stabilo */
+    font-weight: bold; /* Memberikan efek tebal */
+}
+
+.order-summary {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 7px; /* Ukuran font yang lebih kecil */
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-weight: bold;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-body .order-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+}
+
+.order-col {
+    flex: 1;
+    text-align: left;
+    padding: 0 10px; /* Memberi jarak horizontal */
+}
+
+.order-header .order-col,
+.order-row .order-col {
+    text-align: left;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Pusatkan tombol secara horizontal */
+    align-items: center; /* Pusatkan tombol secara vertikal */
+}
+
+.action-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+}
+
+@media print {
+    body {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 14px;
+        margin: 0;
+    }
+    .modal-footer,
+    .modal-header {
+        display: none; /* Menyembunyikan bagian modal saat mencetak */
+    }
+    .container {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}

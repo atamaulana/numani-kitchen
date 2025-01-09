@@ -1,0 +1,512 @@
+/* Import Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#cart-items-container {
+    max-height: 400px; /* Sesuaikan dengan tinggi yang diinginkan */
+    overflow-y: auto; /* Tambahkan scrollbar vertikal */
+}
+
+.poppins-regular {
+    font-weight: 400;
+}
+
+.poppins-medium {
+    font-weight: 500;
+}
+
+.poppins-semibold {
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+    margin-top: 100px; /* Pastikan ini sesuai dengan tinggi navbar */
+    height: calc(100vh - 100px); /* Agar hero tetap pas di layar */
+    position: relative;
+    width: 100%;
+}
+
+.hero-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+.hero-section::before {
+    background-color: rgb(252, 250, 250);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-section .container {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+
+.ice-level-container {
+    display: none; /* Tersembunyi secara default */
+}
+
+/* Navbar */
+.navbar {
+    background-color: white;
+    height: 80px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+}
+
+.navbar-brand {
+    font-weight: 500;
+    color: #d0aa11;
+    font-size: 40px;
+    transition: 0.3s color;
+}
+
+.navbar-brand span {
+    color: black;
+}
+
+.navbar-toggler {
+    font-size: 1.25rem;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #000;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #d0aa11;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+}
+
+.navbar.scrolled {
+    border: 2px solid #d0aa11; /* Sesuaikan warna dan ketebalan */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Opsional: tambahkan bayangan */
+}
+
+/* Menu Section */
+#menu-section {
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.menu-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(150px, 2fr)); */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%; /* Pastikan lebar penuh */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 150px;
+    object-fit: cover;
+    width: 100%;
+}
+
+#menu-section h2,
+#menu-section h3 {
+    color: #333;
+}
+
+/* Styling Judul dan Harga */
+.card-title {
+    text-overflow: ellipsis; /* Tampilkan elipsis (...) */
+    font-size: 1rem; /* Ukuran font */
+    margin: 0;
+}
+
+.card-menu {
+    font-size: 1rem;
+}
+
+.card-price {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.card-price del {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* Styling Tombol */
+
+.btn-prima {
+    background-color: white;
+    border: 1px solid;
+    border-color: #d0aa11;
+    color: #d0aa11;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.btn-prima:hover {
+    background-color: #d0aa11;
+    border: none;
+    color: white;
+}
+
+/* Modal */
+.modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content img {
+    /* width: 100%;
+    height: auto; */
+    max-height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.modal-body h5 {
+    font-size: 1.25rem;
+}
+
+.modal-body h6,
+.modal-body p {
+    font-size: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    gap: 10px;
+}
+
+.modal-footer .btn {
+    flex-grow: 1;
+    max-width: 150px;
+}
+
+/* Buttons */
+.login-button {
+    background-color: #d0aa11;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.login-button:hover {
+    background-color: #d0aa11;
+}
+
+.order-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-image {
+    flex-shrink: 0;
+    margin-right: 20px; /* Memberi jarak antara gambar dan detail */
+}
+
+.order-image img {
+    width: 100px; /* Ukuran gambar */
+    height: 100px;
+    object-fit: cover; /* Menjaga proporsi gambar */
+    border-radius: 8px;
+}
+
+.order-details {
+    flex-grow: 1; /* Membiarkan detail menu mengambil ruang yang tersisa */
+}
+
+.order-details h5 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.order-details p {
+    margin: 2px 0; /* Mengatur jarak antar paragraf */
+    font-size: 1rem;
+}
+
+.customizations {
+    margin-top: 10px;
+}
+
+.customizations h6 {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.customizations p {
+    margin-left: 20px; /* Memberi indentasi untuk elemen kustomisasi */
+}
+
+.search-container {
+    margin: 20px;
+    text-align: center;
+}
+
+.search-bar {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 10px solid #d0aa11;
+    margin-bottom: 20px;
+}
+
+.d-none {
+    display: none !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero-section {
+        height: 80vh; /* Adjust height for medium screens */
+    }
+    .hero-image {
+        object-fit: cover;
+    }
+    .navbar-brand {
+        font-size: 30px;
+    }
+
+    .col-lg-3 {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 40vh; /* Adjust height for smaller screens */
+    }
+    .hero-image {
+        object-fit: contain; /* Preserve the aspect ratio of the image */
+    }
+    .hero-section .container {
+        text-align: center; /* Center align content */
+    }
+    .navbar-brand {
+        font-size: 35px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr); /* Dua kolom */
+    }
+
+    .card {
+        height: auto;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        padding: 0.5rem 1rem;
+    }
+
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    #menu-section h2,
+    #menu-section h3 {
+        font-size: 1.25rem;
+    }
+
+    .card-title,
+    .modal-body h5 {
+        font-size: 1rem;
+    }
+
+    .card-text,
+    .modal-body h6,
+    .modal-body p {
+        font-size: 0.85rem;
+    }
+
+    .card-img-top-wrapper {
+        height: 120px; /* Lebih kecil untuk layar kecil */
+    }
+    .card-title {
+        font-size: 0.9rem;
+    }
+    .card-menu {
+        font-size: 0.9rem;
+    }
+    .card-price {
+        font-size: 0.8rem;
+    }
+    .btn-prima {
+        font-size: 0.8rem;
+    }
+}
+
+/* Media Query untuk Max-Width 480px */
+@media (max-width: 480px) {
+    .hero-section {
+        height: 30vh; /* Further reduce height for mobile screens */
+        width: 100%;
+    }
+    .hero-image {
+        object-fit: cover;
+    }
+    .hero-section .container {
+        padding: 10px; /* Add padding for better spacing */
+    }
+    .navbar-brand {
+        font-size: 25px;
+    }
+    /* Atur Grid Card */
+    .menu-grid {
+        grid-template-columns: repeat(
+            2,
+            1fr
+        ); /* Hanya 1 kolom di layar kecil */
+    }
+
+    /* Atur Ukuran Gambar Card */
+    .card-img-top-wrapper {
+        height: 100px; /* Gambar lebih kecil */
+    }
+
+    .card-img-top {
+        object-fit: cover; /* Pastikan gambar tetap proporsional */
+        height: 100px; /* Gambar lebih kecil */
+    }
+
+    /* Atur Ukuran Teks */
+    .card-title {
+        font-size: 0.9rem; /* Judul lebih kecil */
+        text-align: center;
+    }
+
+    .card-menu {
+        font-size: 0.9rem;
+    }
+
+    .card-price {
+        font-size: 0.75rem; /* Harga lebih kecil */
+        text-align: center;
+    }
+
+    /* Atur Tombol */
+    .btn-prima {
+        font-size: 0.8rem;
+        padding: 0.4rem; /* Sesuaikan padding */
+        border-radius: 15px; /* Lebih bulat untuk estetika */
+    }
+
+    /* Heading Section */
+    h2,
+    h3 {
+        font-size: 1.2rem; /* Ukuran heading lebih kecil */
+        text-align: center;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 10px; /* Kurangi padding container */
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 0.5rem 1rem; /* Navbar lebih kecil */
+    }
+
+    .nav-link {
+        font-size: 0.85rem; /* Teks navbar lebih kecil */
+        padding: 0.5rem; /* Kurangi padding */
+    }
+
+    .modal-dialog {
+        width: 85%; /* Pastikan modal tidak melebihi layar */
+        margin: 0 auto;
+    }
+}

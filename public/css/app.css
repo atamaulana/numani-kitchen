@@ -1,0 +1,276 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.order-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-image {
+    flex-shrink: 0;
+    margin-right: 20px; /* Memberi jarak antara gambar dan detail */
+}
+
+.order-image img {
+    width: 100px; /* Ukuran gambar */
+    height: 100px;
+    object-fit: cover; /* Menjaga proporsi gambar */
+    border-radius: 8px;
+}
+
+.order-details {
+    flex-grow: 1; /* Membiarkan detail menu mengambil ruang yang tersisa */
+}
+
+.order-details h5 {
+    margin-top: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.order-details p {
+    margin: 2px 0; /* Mengatur jarak antar paragraf */
+    font-size: 0.8rem;
+}
+
+.customizations {
+    margin-top: 10px;
+}
+
+.customizations h6 {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+}
+
+.customizations p {
+    margin-left: 8px; /* Memberi indentasi untuk elemen kustomisasi */
+    font-size: 0.8rem;
+}
+
+.alert {
+    padding: 10px;
+    border: 1px solid red;
+    background-color: #f8d7da;
+    color: #721c24;
+    margin-bottom: 15px;
+}
+.alert ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Container styling */
+ul {
+    list-style: none; /* Menghapus bullet list */
+    padding: 0;
+    margin: 20px 0;
+}
+
+.order-item {
+    max-height: 300px; /* Atur tinggi maksimal container untuk daftar pesanan */
+    overflow-y: auto; /* Membuat scrollbar vertikal jika konten melebihi tinggi */
+}
+
+/* Container utama */
+.order-card {
+    max-width: 500px;
+    margin: 10px auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+}
+
+/* Gambar menu */
+.order-image img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Detail pesanan */
+.order-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Detail menggunakan grid untuk titik dua sejajar */
+.order-details-row {
+    display: grid;
+    grid-template-columns: 120px 10px auto; /* Label, titik dua, dan nilai */
+    gap: 4px;
+    line-height: 1.8;
+}
+
+/* Titik dua */
+.order-details-row span.colon {
+    text-align: center;
+}
+
+/* Nilai */
+.order-details-row span.value {
+    text-align: left;
+}
+
+/* Judul menu */
+.order-details h3 {
+    margin-bottom: 10px;
+}
+
+button.btn {
+    display: inline-block;
+    background-color: #007bff; /* Warna biru */
+    color: white; /* Warna teks */
+    padding: 10px 20px; /* Jarak dalam tombol */
+    border-radius: 5px; /* Sudut membulat */
+    border: none; /* Hilangkan border */
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #0056b3; /* Warna biru lebih gelap saat hover */
+}
+
+/* Total Harga */
+h4 {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffeb3b; /* Warna kuning cerah */
+    color: #333; /* Warna teks */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container untuk form */
+form {
+    max-width: 400px; /* Membatasi lebar form */
+    margin: 20px auto; /* Tengah di halaman */
+    padding: 20px;
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    font-family: "Arial", sans-serif; /* Font yang rapi */
+}
+
+/* Styling untuk tiap grup input */
+form div {
+    margin-bottom: 15px; /* Jarak antar elemen */
+}
+
+/* Label */
+form label {
+    display: block; /* Membuat label tampil di atas input */
+    margin-bottom: 5px;
+    font-weight: bold; /* Membuat teks tebal */
+    color: #333; /* Warna teks */
+}
+
+/* Input dan Select */
+form input,
+form select {
+    width: 100%; /* Input dan select memanjang sesuai form */
+    padding: 10px;
+    border: 1px solid #ccc; /* Warna border abu-abu */
+    border-radius: 5px;
+    font-size: 14px; /* Ukuran font */
+    box-sizing: border-box; /* Menghindari overflow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Animasi */
+}
+
+/* Efek hover dan fokus */
+form input:focus,
+form select:focus {
+    border-color: #007bff; /* Warna biru saat fokus */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.4); /* Efek cahaya */
+    outline: none; /* Menghapus outline default */
+}
+
+/* Tombol */
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Warna biru */
+    color: white; /* Warna teks */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animasi warna */
+}
+
+/* Hover tombol */
+form button:hover {
+    background-color: #0056b3; /* Warna biru lebih gelap */
+}
+
+/* Container utama */
+.checkout {
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    padding: 15px;
+}
+
+/* Setiap baris */
+.checkout-row {
+    display: grid;
+    grid-template-columns: 150px 10px auto; /* Label, titik dua, dan nilai */
+    gap: 10px;
+}
+
+/* Label */
+.checkout-row span.label {
+    text-align: left;
+}
+
+/* Titik dua */
+.checkout-row span.colon {
+    text-align: center;
+}
+
+/* Nilai */
+.checkout-row span.value {
+    text-align: left;
+}
+
+/* Styling responsif */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+
+    form input,
+    form select,
+    form button {
+        font-size: 14px;
+    }
+}
